@@ -1,0 +1,45 @@
+# ChatServer Configuration
+
+server:
+  host: "0.0.0.0"
+  port: 8080
+  workers: null
+  keep_alive: 60
+
+https:
+  enabled: false
+  port: 8443
+  cert_path: "./certs/server.crt"
+  key_path: "./certs/server.key"
+
+database:
+  url: "mysql://chatuser:CHANGE_ME@127.0.0.1:3306/chat_server"
+  # 读池 + 写池总和上限（默认 800，按 MySQL max_connections=1000 的 80% 设置）
+  max_total_connections: 800
+  read_pool_max: 300
+  read_pool_min: 20
+  write_pool_max: 500
+  write_pool_min: 50
+  # WriteWorker 队列架构已移除（04-28），以下两项不再生效，保留仅为兼容旧配置
+  write_worker_num: 100
+  worker_db_connections: 5
+
+redis:
+  url: "redis://127.0.0.1:6379"
+  pool_size: 10
+  write_queue_key: "chatserver:write_queue"
+
+jwt:
+  secret: "change-me-jwt-secret-in-production"
+  refresh_secret: "change-me-jwt-refresh-secret-in-production"
+  access_token_expire_minutes: 120
+  refresh_token_expire_days: 7
+
+logging:
+  level: "info"
+  file: null
+  format: "json"
+
+rate_limit:
+  enabled: false
+  requests_per_minute: 100000
