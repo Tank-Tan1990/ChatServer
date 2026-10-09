@@ -10,7 +10,7 @@ import pymysql
 
 DB_HOST = os.environ.get("DB_HOST", "127.0.0.1")
 DB_USER = os.environ.get("DB_USER", "chatuser")
-DB_PASS = os.environ.get("DB_PASS", "chat2024")
+DB_PASS = os.environ.get("DB_PASS", "CHANGE_ME")
 DB_NAME = os.environ.get("DB_NAME", "chat_server")
 
 PATTERNS = ["bench_%", "alice_%", "bob_%"]

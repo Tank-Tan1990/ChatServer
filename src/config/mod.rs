@@ -99,7 +99,7 @@ impl Default for AppConfig {
             jwt: JwtConfig {
                 secret: std::env::var("JWT_SECRET").unwrap_or_else(|_| {
                     tracing::warn!("⚠️ 使用默认 JWT_SECRET，请设置 JWT_SECRET 环境变量！");
-                    "chat_server_secret_key_2024_dev_only".to_string()
+                    "change-me-jwt-secret-in-production".to_string()
                 }),
                 refresh_secret: std::env::var("JWT_REFRESH_SECRET").unwrap_or_else(|_| {
                     "change-me-refresh-secret-dev-only".to_string()

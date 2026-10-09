@@ -1,5 +1,6 @@
+import os
 import pymysql
-conn = pymysql.connect(host='127.0.0.1', user='chatuser', password='chat2024', database='chat_server')
+conn = pymysql.connect(host='127.0.0.1', user='chatuser', password=os.environ.get("DB_PASS", "CHANGE_ME"), database='chat_server')
 c = conn.cursor()
 c.execute('SET FOREIGN_KEY_CHECKS=0')
 for table in ['group_members', '`groups`', 'friends', 'friend_requests', 'messages', 'refresh_tokens', 'users']:
