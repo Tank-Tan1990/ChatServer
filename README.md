@@ -5,7 +5,7 @@
 [![Rust](https://img.shields.io/badge/rust-1.74%2B-orange.svg)](https://www.rust-lang.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Axum](https://img.shields.io/badge/web-axum%200.7-9cf.svg)](https://github.com/tokio-rs/axum)
-[![CI](https://github.com/your-org/ChatServer/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/ChatServer/actions)
+[![CI](https://github.com/Tank-Tan1990/ChatServer/actions/workflows/ci.yml/badge.svg)](https://github.com/Tank-Tan1990/ChatServer/actions)
 
 ---
 
