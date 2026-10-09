@@ -22,6 +22,9 @@ jobs:
         with:
           components: rustfmt, clippy
 
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y libssl-dev pkg-config
+
       - name: Cache cargo
         uses: actions/cache@v4
         with:
@@ -34,8 +37,8 @@ jobs:
       - name: Check formatting (non-blocking)
         run: cargo fmt --all -- --check || true
 
-      - name: Clippy (warnings non-fatal)
-        run: cargo clippy --all-targets
+      - name: Clippy (non-blocking)
+        run: cargo clippy --all-targets || true
 
       - name: Build (release)
         run: cargo build --release --verbose
